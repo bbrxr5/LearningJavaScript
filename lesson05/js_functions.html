@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Js Lessons</title>
+		<meta charset="UTF-8" />
+		<script>
+			var superData = {"Superman":["Lex Luther"],
+							"Batman":["Joker", "Riddler"],
+							"Spiderman":["Green Goblin", "Vulture", "Carnage"],
+							"Thor":["Loki", "Frost Giants"]};
+			function writeIt(){
+				for (hero in superData) {
+					var villains = superData[hero];
+					for (villainIdx in villains){
+						var villain = villains[villainIdx];
+						var listItem = makeListItem(hero, villain);
+						function makeListItem(name, value){
+							var itemStr = "<li>" + name + ":&nbsp;" + value + "</li>";
+							return itemStr
+						}
+						document.write(listItem);
+					}
+				}
+			}
+		</script>	
+	</head>
+	<body onload="writeIt()">
+	</body>
+</html>
